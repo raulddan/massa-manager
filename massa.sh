@@ -77,16 +77,16 @@ LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/massad.service
-            systemctl daemon-reload
-            systemctl enable massad
-            systemctl restart massad
+            sudo systemctl daemon-reload
+            sudo systemctl enable massad
+            sudo systemctl restart massad
             sudo chmod 755 /etc/systemd/system/
             ;;
         "Logs - doar pt Systemd")
             journalctl -xefu massad
             ;;
         "Repornire Nod")
-            systemctl restart massad
+            sudo systemctl restart massad
             ;;
         *) echo "Optiune inexistenta";;
     esac
