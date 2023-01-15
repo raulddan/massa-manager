@@ -27,6 +27,9 @@ do
             rustup default nightly-2022-12-24
             rustc --version
             git clone --branch testnet https://github.com/massalabs/massa.git
+            sudo ufw allow 31244
+            sudo ufw allow 31245
+            sudo ufw allow 33035
 
             #Rulare nod
             cd massa/massa-node/
