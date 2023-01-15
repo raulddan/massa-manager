@@ -53,7 +53,7 @@ EOF
         "Rulare Client")
             cd ~
             cd massa/massa-client/
-            cargo run --release -- -p $parola
+            sudo -u $USER cargo run --release -- -p $parola
             ;;
         "Update Config.toml cu ip nou")
             tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml 
