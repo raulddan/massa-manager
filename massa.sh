@@ -27,10 +27,13 @@ do
             rustup default nightly-2022-12-24
             rustc --version
             git clone --branch testnet https://github.com/massalabs/massa.git
-
+            
             #Rulare nod
             cd massa/massa-node/
             RUST_BACKTRACE=full cargo build --release --
+            sudo ufw allow 31244
+            sudo ufw allow 31245
+            sudo ufw allow 33035
             sudo tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml
 [network]
 routable_ip = "`wget -qO- eth0.me`"
