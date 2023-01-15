@@ -46,7 +46,8 @@ EOF
             git remote set-url origin https://github.com/massalabs/massa.git
             git checkout testnet
             git pull
-            cd massa-node/
+            cd ~
+            cd massa/massa-node/
             RUST_BACKTRACE=full cargo build --release --
             ;;
         "Rulare Client")
