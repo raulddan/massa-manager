@@ -31,7 +31,7 @@ do
             #Rulare nod
             cd massa/massa-node/
             RUST_BACKTRACE=full cargo build --release --
-            tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml
+            sudo tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml
 [network]
 routable_ip = "`wget -qO- eth0.me`"
 EOF
@@ -46,24 +46,23 @@ EOF
             git remote set-url origin https://github.com/massalabs/massa.git
             git checkout testnet
             git pull
-            cd ~
-            cd massa/massa-node/
+            cd massa-node/
             RUST_BACKTRACE=full cargo build --release --
             ;;
         "Rulare Client")
             cd ~
             cd massa/massa-client/
-            sudo -u $(logname) cargo run --release -- -p $parola
+            cargo run --release -- -p $parola
             ;;
         "Update Config.toml cu ip nou")
-            tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml 
+            sudo tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml 
 [network] 
 routable_ip = "`wget -qO- eth0.me`"
 EOF
             ;;
         "Instalare Systemd pentru mentinerea nodului pornit")
             #Creare Systemd pentru mentinerea nodului pornit
-            chmod 777 /etc/systemd/system/
+            sudo chmod 777 /etc/systemd/system/
             printf "[Unit]
 Description=Massa Node
 After=network-online.target
@@ -81,7 +80,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/massad.service
             systemctl daemon-reload
             systemctl enable massad
             systemctl restart massad
-            chmod 755 /etc/systemd/system/
+            sudo chmod 755 /etc/systemd/system/
             ;;
         "Logs - doar pt Systemd")
             journalctl -xefu massad
