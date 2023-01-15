@@ -6,7 +6,7 @@
 echo "Introduceti parola pentru nod/client:"
 read parola
 
-if [$USER != root]
+if ($USER != root)
 then
     PS3='Selectati:'
     optiuni=("Instalare nod Massa" "Update nod Massa" "Rulare Client" "Instalare Systemd pentru mentinerea nodului pornit" "Update Config.toml cu ip nou" "Logs - doar pt Systemd" "Repornire Nod")
