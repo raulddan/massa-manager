@@ -36,18 +36,7 @@ do
 routable_ip = "`wget -qO- eth0.me`"
 EOF
             ;;
-        "Rulare Client")
-            cd ~
-            cd massa/massa-client/
-            cargo run --release -- -p $parola
-            ;;
-        "Update Config.toml cu ip nou")
-            tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml 
-[network] 
-routable_ip = "`wget -qO- eth0.me`"
-EOF
-            ;;
-        "Update Nod Massa")
+        "Update nod Massa")
             sudo apt update && sudo apt upgrade -y
             cd ~
             rustup install nightly-2022-12-24
@@ -59,6 +48,17 @@ EOF
             git pull
             cd massa-node/
             RUST_BACKTRACE=full cargo build --release --
+            ;;
+        "Rulare Client")
+            cd ~
+            cd massa/massa-client/
+            cargo run --release -- -p $parola
+            ;;
+        "Update Config.toml cu ip nou")
+            tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml 
+[network] 
+routable_ip = "`wget -qO- eth0.me`"
+EOF
             ;;
         "Instalare Systemd pentru mentinerea nodului pornit")
             #Creare Systemd pentru mentinerea nodului pornit
