@@ -58,7 +58,7 @@ EOF
             "Rulare Client")
                 cd ~
                 cd massa/massa-client/
-                ./massa-client -p $parola
+                cargo run --release -- -p $parola
                 break
                 ;;
             "Update Config.toml cu ip nou")
