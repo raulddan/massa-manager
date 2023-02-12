@@ -92,7 +92,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/massad.service
                 break
                 ;;
             "Logs - doar pt Systemd")
-                journalctl -xefu massad
+                sudo journalctl -u massad -f --no-hostname -o cat
                 break
                 ;;
             "Repornire Nod")
