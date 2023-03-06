@@ -18,9 +18,9 @@ Rulare Manager:
         bash massa.sh 
 (introducem parola pe care vrem sa o setam nodului/clientului sau parola pe care o avem deja setata)
 
-#### Pentru instalarea nodului Massa selectam pe rand optiunile 1, 4
+#### Pentru instalarea nodului Massa selectam pe rand optiunile 1, 5, 4
 
-#### Pentru a face update nodului Massa selectam optiunile 2, 7
+#### Pentru a face update nodului Massa selectam optiunile 2, 5, 7
 
 #### Pentru a deschide Clientul selectam optiunea 3
     
