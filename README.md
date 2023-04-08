@@ -11,24 +11,24 @@ Pentru instalare rulati comanda:
         
 Pentru update manager rulati comanda:
         
-        ```
+        
         cd massa-manager
         git pull https://github.com/raulddan/massa-manager
-        ```
+        
 
 ### Pornire Manager
 
 Intram in folderul /massa-manager:
         
-        ```
+        
         cd massa-manager
-        ```
+        
         
 Rulare Manager:
         
-        ```
+        
         bash massa.sh
-        ```
+        
         
 (introducem parola pe care vrem sa o setam nodului/clientului sau parola pe care o avem deja setata)
 
