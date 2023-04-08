@@ -5,9 +5,9 @@
 
 Pentru instalare rulati comanda:
 
-        ```
+        
         git clone https://github.com/raulddan/massa-manager.git
-        ```
+        
         
 Pentru update manager rulati comanda:
         
