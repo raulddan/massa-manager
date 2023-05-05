@@ -36,7 +36,7 @@ while true; do
                 sudo ufw allow 31245
                 sudo ufw allow 33035
                 sudo tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml
-[network]
+[protocol]
 routable_ip = "`wget -qO- eth0.me`"
 EOF
                 break
@@ -63,7 +63,7 @@ EOF
                 ;;
             "Update Config.toml cu ip nou")
                 sudo tee <<EOF >/dev/null $HOME/massa/massa-node/config/config.toml 
-[network] 
+[protocol] 
 routable_ip = "`wget -qO- eth0.me`"
 EOF
                 break
