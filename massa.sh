@@ -20,7 +20,7 @@ while true; do
                 rm -rf $HOME/massa
 
                 #Instalare nod dupa documentatia echipei Massa
-                sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
+                sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev protobuf-compiler
                 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
                 source $HOME/.cargo/env
                 rustc --version
