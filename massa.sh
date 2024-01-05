@@ -24,10 +24,10 @@ while true; do
                 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
                 source $HOME/.cargo/env
                 rustc --version
-                rustup toolchain install 1.72.0
-                rustup default 1.72.0
+                rustup toolchain install 1.74.1
+                rustup default 1.74.1
                 rustc --version
-                git clone --branch testnet https://github.com/massalabs/massa.git
+                git clone https://github.com/massalabs/massa.git
                 
                 #Rulare nod
                 cd massa/massa-node/
@@ -44,8 +44,8 @@ EOF
             "Update nod Massa")
                 sudo apt update && sudo apt upgrade -y
                 cd ~
-                rustup toolchain install 1.72.0
-                rustup default 1.72.0
+                rustup toolchain install 1.74.1
+                rustup default 1.74.1
                 cd massa/
                 git stash
                 git remote set-url origin https://github.com/massalabs/massa.git
