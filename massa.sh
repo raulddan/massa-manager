@@ -49,7 +49,7 @@ EOF
                 cd massa/
                 git stash
                 git remote set-url origin https://github.com/massalabs/massa.git
-                git checkout testnet
+                git checkout main
                 git pull
                 cd massa-node/
                 RUST_BACKTRACE=full cargo build --release --
